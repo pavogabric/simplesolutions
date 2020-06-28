@@ -704,6 +704,7 @@ main {
   margin-bottom: 1.5rem;
   -webkit-transition: all .1s;
   transition: all .1s;
+  outline: none;
 }
 
 .contact__form form input:hover,
