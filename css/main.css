@@ -17,7 +17,6 @@ body {
   font-weight: 300;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -119,7 +118,65 @@ button:hover {
   }
 }
 
+.fade-up {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transition: all 1.25s ease-out;
+  transition: all 1.25s ease-out;
+}
+
+.fade-up-fast {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transition: all .75s ease-out;
+  transition: all .75s ease-out;
+}
+
+.fade-right {
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+.fade-left {
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+.fade-right-full-width {
+  -webkit-transform: translateX(80%);
+          transform: translateX(80%);
+  opacity: 0;
+  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+.fade-left-full-width {
+  -webkit-transform: translateX(-80%);
+          transform: translateX(-80%);
+  opacity: 0;
+  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+.show {
+  opacity: 1;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
 /* ANIMATIONS */
+main {
+  overflow: hidden;
+}
+
 .hero {
   height: 80vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url("../images/hero-image-desktop.jpg");

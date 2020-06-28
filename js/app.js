@@ -17,83 +17,71 @@ function hideNav() {
 const header = document.querySelector('.header');
 
 window.onscroll = function () {
-    if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if(document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
         header.classList.add('isScrolled');
     } else {
         header.classList.remove('isScrolled');
     }
 }
 
-gsap.registerPlugin(ScrollTrigger);
+// HTML ELEMENTS FOR FADING
+const fadeUp = document.querySelectorAll('.fade-up');
+const fadeUpFast = document.querySelectorAll('.fade-up-fast');
+const fadeRight = document.querySelectorAll('.fade-right');
+const fadeLeft = document.querySelectorAll('.fade-left');
+const fadeRightFullWidth = document.querySelectorAll('.fade-right-full-width');
+const fadeLeftFullWidth = document.querySelectorAll('.fade-left-full-width');
 
-gsap.from('.cardOne', {
-    scrollTrigger: '.cardOne',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
+const cardsObserverOptions = {
+    threshold: 0.25
+};
+
+const cardsObserver = new IntersectionObserver(function(entries, cardsObserver) {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) {
+            return
+        } else {
+            entry.target.classList.toggle('show');
+            cardsObserver.unobserve(entry.target);
+        }
+    })
+}, cardsObserverOptions);
+
+fadeUp.forEach(card => {
+    cardsObserver.observe(card);
 })
 
-gsap.from('.cardTwo', {
-    scrollTrigger: '.cardTwo',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
+
+const headingsObserverOptions = {
+    threshold: 0.25
+};
+
+const headingsObserver = new IntersectionObserver(function(entries, headingsObserver){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) {
+            return
+        } else {
+            entry.target.classList.toggle('show');
+            headingsObserver.unobserve(entry.target);
+        }
+    })
+}, headingsObserverOptions);
+
+fadeRight.forEach(heading => {
+    headingsObserver.observe(heading);
 })
 
-gsap.from('.cardThree', {
-    scrollTrigger: '.cardThree',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
-})
+fadeLeft.forEach(heading => {
+    headingsObserver.observe(heading);
+}) 
 
-gsap.from('.aboutHeadingOne', {
-    scrollTrigger: '.aboutHeadingOne',
-    x: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
+fadeRightFullWidth.forEach(heading => {
+    headingsObserver.observe(heading);
 })
+fadeLeftFullWidth.forEach(heading => {
+    headingsObserver.observe(heading);
+}) 
 
-gsap.from('.aboutHeadingTwo', {
-    scrollTrigger: '.aboutHeadingTwo',
-    x: -100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
-})
-
-gsap.from('.bannerSlideUp', {
-    scrollTrigger: '.bannerSlideUp',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
-})
-
-gsap.from('.reviewOneSlideUp', {
-    scrollTrigger: '.reviewOneSlideUp',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
-})
-
-gsap.from('.reviewTwoSlideUp', {
-    scrollTrigger: '.reviewTwoSlideUp',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
-})
-
-gsap.from('.banner2SlideUp', {
-    scrollTrigger: '.banner2SlideUp',
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "none"
+fadeUpFast.forEach(heading => {
+    headingsObserver.observe(heading);
 })
