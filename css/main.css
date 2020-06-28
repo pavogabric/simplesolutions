@@ -122,48 +122,48 @@ button:hover {
   opacity: 0;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
-  -webkit-transition: all 1.25s ease-out;
-  transition: all 1.25s ease-out;
+  -webkit-transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
 .fade-up-fast {
   opacity: 0;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
-  -webkit-transition: all .75s ease-out;
-  transition: all .75s ease-out;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 .fade-right {
   opacity: 0;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
-  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  -webkit-transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
 .fade-left {
   opacity: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
-  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  -webkit-transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
 .fade-right-full-width {
   -webkit-transform: translateX(80%);
           transform: translateX(80%);
   opacity: 0;
-  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
-  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  -webkit-transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
 .fade-left-full-width {
   -webkit-transform: translateX(-80%);
           transform: translateX(-80%);
   opacity: 0;
-  -webkit-transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
-  transition: all 1s cubic-bezier(0.5, 0.25, 0, 1);
+  -webkit-transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
+  transition: all 1.5s cubic-bezier(0.5, 0.25, 0, 1);
 }
 
 .show {
@@ -219,7 +219,7 @@ main {
 }
 
 .hero .header__logo {
-  background: url("/images/LOGO.png");
+  background: url("../images/LOGO.png");
   width: 17.5rem;
   height: 2.4rem;
 }
@@ -427,8 +427,6 @@ main {
           box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  -webkit-transition: all .25s;
-  transition: all .25s;
 }
 
 .services__card:last-of-type {
@@ -447,11 +445,6 @@ main {
   background-color: #19B8C2;
   -webkit-transition: all .5s;
   transition: all .5s;
-}
-
-.services__card:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
 }
 
 .services__card:hover:after {
